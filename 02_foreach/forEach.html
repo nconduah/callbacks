@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<script src="payments_2005_to_2010.json" ></script>
 <script>
 
 var employees = [
@@ -11,9 +12,19 @@ var employees = [
 // ---------------------------------
 //     YOUR CODE: write callback
 // ---------------------------------
+totalSalary = 0;
+function add(item){
+  totalSalary += Number(item.salary);
+}
 
 employees.forEach(add);
+console.log("employees total salary : $" + totalSalary);
 
-
+totalSalary = 0;
+function addChicagoSalary(item){
+  totalSalary += Number(item[9]);
+}
+chicago.data.forEach(addChicagoSalary);
+console.log("Chicago total salary : $" + totalSalary);
 </script>
 </html>
